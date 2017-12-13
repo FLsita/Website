@@ -1,122 +1,174 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Bio</title> 
+<title>Contact Lenses Recommendation</title>
 <style>
-	
 body {
-    margin: 0;
-    font-family: 'Lato', sans-serif;
-    background #ffdbb0; 
+    background-color: #2F0E3B; 
 }
-
-	table, th, td {
-    
-} 
-	th{
-font-family: 'Lato', sans-serif;
-font-size: 25px;
-text-align:center;
-color:maroon;
+p {
+    	color: #E0A6F5;
+	text-align: center;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
-.overlay {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: rgb(255,255,255);
-    background-color: rgba(66,0,17,1);
-    overflow-x: hidden;
-    transition: 0.5s;
+h1 {
+    	color: #E0A6F5;
+	text-align: center;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
-
-.overlay-content {
-    position: relative;
-    top: 25%;
-    width: 100%;
-    text-align: center;
-    margin-top: 30px;
+h3 {
+    	color: #E0A6F5;
+	text-align: center;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
-
-.overlay a {
-    padding: 8px;
-    text-decoration: none;
-    font-size: 36px;
-    color: #e3e3e3;
-    display: block;
-    transition: 0.3s;
+select {
+    	color: #56116F;
+	text-align: center;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
-
-.overlay a:hover, .overlay a:focus {
-    color: #1e0000;
+button {
+   	 color: #56116F;
+	text-align: center;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;	
 }
-
-.overlay .closebtn {
-    position: absolute;
-    top: 20px;
-    right: 45px;
-    font-size: 60px;
-}
-
-@media screen and (max-height: 450px) {
-  .overlay a {font-size: 60px}
-  .overlay .closebtn {
-    font-size: 40px;
-    top: 15px;
-    right: 35px;
-  }
-}
-
-h1{
-	font-size:100px:
-	}
-	
-p1{
-	
 </style>
-</head>
-	<!-- Stat of bio page --> 
-
- <div data-role= "page" id= "bio.html" 	
- 
-<body>
-
-<div id="myNav" class="overlay">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <div class="overlay-content">
-	  
-    <a href="index.html">Hompage</a>
-    <a href="bio.html">About Saloni</a>
-    <a href="education.html">Education</a>
-    <a href="experience.html">Experience</a>
-    <a href="skills_awards.html">Skills & Awards</a>
-  </div>
-</div>
-	
-<div> 
-<span style="font-size:50px;cursor:pointer" onclick="openNav()">&#9776; </span>
-</div> 
-	
-	<h1><center>Who is Saloni Nagarkar?</center></h1> 
-	<table>
-  <tr>
-    <th><img src = "https://lh3.googleusercontent.com/X-nLsiTer55GndjRKz3O1nKyNjYOAwxravduoRrwlQU=w680-h979-no" alt = "You should see a picture"
-			height=400px width = 300px position:center></th>
-    <th>Hi, my name is Saloni! I am currently an undergraduate student at the University of Illinois at Urbana-Champign. My passion lies in helping others and educating kids about STEM. I am an extremely hardworking and determined person.</th>
-  </tr>   
-</table>
 <script>
-function openNav() {
-    document.getElementById("myNav").style.width = "100%";
+function contactRecommendation() {
+/////////////////////////MENU 1////////////////////////
+var getValAge = document.getElementById("age").value;
+var menu1;
+	if(getValAge == "1"){
+			menu1 = 1;
+			
+	}
+	if(getValAge  == "2"){
+			menu1 = 2;
+	}
+	if(getValAge  == "3"){
+			menu1 = 3;			
+	}
+////////////////////END OF MENU 1////////////////////////
+/////////////////////////MENU 2//////////////////////////
+var getValPrescription = document.getElementById("prescription").value;
+var menu2;
+	if(getValPrescription == "1"){
+			menu2 = 1;
+			
+	}
+	if(getValPrescription  == "2"){
+			menu2 = 2;
+	}
+////////////////////END OF MENU 2////////////////////////
+/////////////////////////MENU 3//////////////////////////	
+var getValAstigmatism = document.getElementById("astigmatism").value;
+var menu3;
+	if(getValAstigmatism == "1"){
+			menu3 = 1;
+			
+	}
+	if(getValAstigmatism  == "2"){
+			menu3 = 2;
+	}
+////////////////////END OF MENU 3////////////////////////
+/////////////////////////MENU 4//////////////////////////	
+var getValTearProduction = document.getElementById("tearProduction").value;
+var menu4;
+	if(getValTearProduction == "1"){
+			menu4 = 1;
+			
+	}
+	if(getValTearProduction  == "2"){
+			menu4 = 2;
+			alert("It is recommended for you not to wear contacts.");
+			document.getElementById("finalImage").src ="no_lense.png";
+	}	
+////////////////////END OF MENU 4////////////////////////
+if(menu1 == 1 && menu2 == 1 && menu3 == 1 && menu4 == 1){
+	alert("It is recommended for you to wear hard contacts.");
+	document.getElementById("finalImage").src ="hard_lense.png";
+	}
+if(menu1 == 1 && menu2 == 1 && menu3 == 2 && menu4 == 1){
+	alert("It is recommended for you to wear soft contacts.");
+	document.getElementById("finalImage").src ="soft_lense.png";
+	}
+if(menu1 == 1 && menu2 == 2 && menu3 == 2 && menu4 == 1){
+	alert("It is recommended for you to wear soft contacts.");
+	document.getElementById("finalImage").src ="soft_lense.png";
+	}
+if(menu1 == 1 && menu2 == 2 && menu3 == 1 && menu4 == 1){
+	alert("It is recommended for you to wear hard contacts.");
+	document.getElementById("finalImage").src ="hard_lense.png";
+	}
+if(menu1 == 2 && menu2 == 1 && menu3 == 2 && menu4 == 1){
+	alert("It is recommended for you to wear soft contacts.");
+	document.getElementById("finalImage").src ="soft_lense.png";
+	}
+if(menu1 == 2 && menu2 == 2 && menu3 == 2 && menu4 == 1){
+	alert("It is recommended for you to wear soft contacts.");
+	document.getElementById("finalImage").src ="soft_lense.png";
+	}
+if(menu1 == 2 && menu2 == 1 && menu3 == 1 && menu4 == 1){
+	alert("It is recommended for you to wear hard contacts.");
+	document.getElementById("finalImage").src ="hard_lense.png";
+	}
+if(menu1 == 2 && menu2 == 2 && menu3 == 1 && menu4 == 1){
+	alert("It is recommended for you not to wear contacts.");
+	document.getElementById("finalImage").src ="no_lense.png";
+	}
+if(menu1 == 3 && menu2 == 1 && menu3 == 2 && menu4 == 1){
+	alert("It is recommended for you not to wear contacts.");
+	document.getElementById("finalImage").src ="no_lense.png";
+	}
+if(menu1 == 3 && menu2 == 1 && menu3 == 1 && menu4 == 1){
+	alert("It is recommended for you to wear hard contacts.");
+	document.getElementById("finalImage").src ="hard_lense.png";
+	}
+if(menu1 == 3 && menu2 == 2 && menu3 == 2 && menu4 == 1){
+	alert("It is recommended for you to wear soft contacts.");
+	document.getElementById("finalImage").src ="soft_lense.png";
+	}
+if(menu1 == 3 && menu2 == 2 && menu3 == 1 && menu4 == 1){
+	alert("It is recommended for you not to wear contacts");
+	document.getElementById("finalImage").src ="no_lense.png";
+	}
 }
-
-function closeNav() {
-    document.getElementById("myNav").style.width = "0%";
-}
-</script>
-     
-</div>
+</script>	
+</head>
+<center>
+<body>
+<h1>Contact Lenses Recommendation</h1>
+<h3>Depending on different factors, this program will be able to decide whether or not you can use contacts and what type of contacts you should use.</h3>
+<!--options for age-->
+<p>Please select your age range.</p>
+<select id="age">
+	<option value="1">Under 20</option>
+	<option value="2">20-40</option>
+	<option value="3">Above 40</option>
+</select>
+<!--options for spectacle prescription-->
+<p>Please select your spectacle prescription.</p>
+<select id="prescription">
+	<option value="1">Myopia (near-sightedness)</option>
+	<option value="2">Hyperopia (far-sightedness)</option>
+</select>
+<!--options for whether or not user has astigmatism-->
+<p>Please select whether or not you have astigmatism (blurry vision).</p>
+<select id="astigmatism">
+	<option value="1">Yes</option>
+	<option value="2">No</option>
+</select>
+<!--options for tear production rate-->
+<p>Please select whether or not your tear production rate is normal.</p>
+<select id="tearProduction">
+	<option value="1">Normal</option>
+	<option value="2">Reduced</option>
+</select>
+<p id="output">Please press the submit button when you are done.</p>
+<button onClick="contactRecommendation()">Submit!</button>
+<br>
+<br>
+<img id="finalImage" src="" alt="">
+</center>
 </body>
 </html>
+
